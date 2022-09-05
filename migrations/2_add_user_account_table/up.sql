@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS public.user_account
+(
+  user_id uuid PRIMARY KEY REFERENCES public.user(user_id) ON UPDATE RESTRICT ON DELETE CASCADE,
+  email VARCHAR(320) UNIQUE NOT NULL,
+  hashedPassword VARCHAR(64) UNIQUE NOT NULL
+);
